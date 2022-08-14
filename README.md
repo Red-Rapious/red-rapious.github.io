@@ -1,2 +1,2 @@
-# red-rapious.github.io
-My GitHub Pages website 
+# Welcome to my GitHub Pages website
+> This is currently under construction. Check back soon!
