@@ -1,5 +1,7 @@
 # Red Rapious's GitHub Pages website
 
+![Red Rapious Logo](assets/img/logo.png)
+
 Hi, I'm an engineering student from France, working since numerous years on software personal projects.
 
 ## Current projects
