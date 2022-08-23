@@ -1,7 +1,7 @@
 import './style.css'
 
 import * as THREE from './node_modules/three/src/Three.js';
-import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls';
+//import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
 
@@ -32,7 +32,7 @@ scene.add(pointLight, ambientLight);
 const gridHelper = new THREE.GridHelper(200, 50);
 scene.add(gridHelper);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+//const controls = new OrbitControls(camera, renderer.domElement);
 
 const starGeometry = new THREE.SphereGeometry(0.25, 24, 24);
 const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
@@ -54,6 +54,20 @@ const profileCube = new THREE.Mesh(
   new THREE.MeshBasicMaterial({ map: redTexture })
 );
 scene.add(profileCube);
+
+
+function moveCamera() {
+  const t = document.body.getBoundingClientRect().top;
+  
+  profileCube.position.y += 0.01;
+  profileCube.position.z += 0.01;
+
+  camera.position.z = t * -0.01;
+  camera.position.x = t * -0.0002;
+  camera.position.y = t * -0.0002;
+}
+
+document.body.onscroll = moveCamera;
 
 function animate() {
   requestAnimationFrame(animate);
