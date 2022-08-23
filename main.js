@@ -34,6 +34,27 @@ scene.add(gridHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
+const starGeometry = new THREE.SphereGeometry(0.25, 24, 24);
+const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+function addStart() {
+  const star = new THREE.Mesh(starGeometry, starMaterial);
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+  star.position.set(x, y, z);
+  scene.add(star);
+}
+
+Array(200).fill().forEach(addStart);
+
+const spaceTexture = new THREE.TextureLoader().load('./assets/space.jpg');
+scene.background = spaceTexture;
+
+const redTexture = new THREE.TextureLoader().load('./assets/profile.jpg');
+const profileCube = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: redTexture })
+);
+scene.add(profileCube);
+
 function animate() {
   requestAnimationFrame(animate);
 
