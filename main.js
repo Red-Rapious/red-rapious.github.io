@@ -17,7 +17,7 @@ camera.position.setZ(30);
 renderer.render(scene, camera);
 
 const geometry = new THREE.TorusGeometry(10, 3, 15, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0xcc0000	});
+const material = new THREE.MeshStandardMaterial({ color: 0xcc0000, wireframe: true });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
