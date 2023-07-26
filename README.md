@@ -8,7 +8,7 @@ Hi, I'm an engineering student from France, working since numerous years on soft
 - I'm currently working on my TIPE project about Computer Vision, take a look [here](https://github.com/Red-Rapious/Car-Computer-Vision). *(in French only)*
 - I build [Elements LaTeX](https://github.com/Red-Rapious/Elements-LaTeX), an Electron-based LaTeX editor.
 
-### Previous projects
+### Previous projects (check my [project history](project-history.md))
 - You can also check out [my biggest project yet](https://github.com/Red-Rapious/MinecraftCloneOpenGL), an implementation of Minecraft using my own, handmade, graphics engine
 - I created [an animated CFD simulator](https://github.com/Red-Rapious/Navier-Stokes-CFD) using the Navier-Stokes equations, you can easily try to run it with `Python` and `Matplotlib` *(in French only)*
 
