@@ -1,11 +1,17 @@
 # My Project History *(WIP)*
 
-I've been programming since I was 10. I mostly learned how to code from online courses, before taking more advanced computer science classes.
+I've been programming since I was 10 years old. I mostly learned how to code from online courses, before taking more advanced computer science classes.
 
 Here is a description of most of my programming projects, from the most recent one to the oldest. The complete repositories are available on [my GitHub profile](https://github.com/Red-Rapious).
 
 ---
 ### [Digits Recognition using a Multilayer Perceptron (MLP)](https://github.com/Red-Rapious/MLP-Digits-Recognition) - July 2023
+
+This is my latest project, which was created following [3Blue1Brown's Neural Networks series](https://youtu.be/aircAruvnKk). The goal of it is to implement a Multilayer Perceptron (MLP) neural network from scratch in Rust, and use it to recognize handwritten digits from the [MNIST dataset](http://yann.lecun.com/exdb/mnist/):
+
+![Digits Recognition](assets/projects/digits-mlp.png)
+
+This gave me a better understanding of how neural networks work, before extensively using frameworks like `TensorFlow` or `Keras`.
 
 ### [A multilingual Tic-Tac-Toe](https://github.com/Red-Rapious/Multilingual-Tic-Tac-Toe) - July 2023
 
@@ -15,11 +21,23 @@ The very first program I wrote entirely myself was a Tic-Tac-Toe that I coded in
 
 ### [Project Euler in Rust (problems 1-30)](https://github.com/Red-Rapious/Euler-Rust) - June 2023
 
-Project Euler provides a set of great exercises to practice algorithmic, but I find the first problems quite good to learn a new language. Hence, I solved the first 30 problems in Rust to practice the language foundations.
+```rust
+pub fn problem9() -> i32 {
+    for a in 1..998 {
+        for b in 1..std::cmp::min(a, 999 - a) {
+            let c = 1_000 - a - b;
+            if a*a + b*b == c*c { return a*b*c }
+        }
+    }
+    panic!();
+}
+```
 
-### My TIPE: Car Computer Vision - 2022/2023
+Project Euler provides a set of great exercises to practice algorithmic, but I find the first problems quite good to learn a new language. Hence, I solved the first 30 [problems](https://projecteuler.net) in Rust to practice the language foundations.
 
-I worked on this machine learning project as part of my early engineering studies. The theme of the year was *The City*, and I decided to implement the Viola-Jones method to detect STOP signs in images. 
+### My [TIPE](https://fr.wikipedia.org/wiki/Travail_d%27initiative_personnelle_encadré): Car Computer Vision - 2022/2023
+
+I worked on this machine learning project as part of my early engineering studies. The theme of the year was *The City*, and I decided to implement the [Viola-Jones method](https://en.wikipedia.org/wiki/Viola–Jones_object_detection_framework) to detect STOP signs in images.
 
 ---
 ### [Elements LaTeX](https://github.com/Red-Rapious/Elements-LaTeX) - July 2022
@@ -31,9 +49,15 @@ I worked on this machine learning project as part of my early engineering studie
 
 ![Navier-Stokes CFD](assets/projects/navier-stokes-cfd.gif)
 
+While looking for interesting topics for my TIPE (see above), I came across [this amazing tutorial series](https://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/) on Computational Fluid Dynamics. While following the course, I decided to implement an animated version of the simulation, using `Matplotlib`.
+
 ### [Tektonik Solver 2000](https://github.com/Red-Rapious/Tektonik-Solver-2000) - October 2021
 
+My maths teacher in 2021-2022 used to give us Tectonic Puzzles, a game similar to Sudoku. During the holidays, I decided to create a script to solve these, using backtracking.
+
 ![Tektonik Solver](assets/projects/tektonik-solver.png)
+
+The code is also [hosted on `repl.it`](https://replit.com/@redrapious/TektonikSolver2000#main.py), so you can go ahead and try the program in your browser, and even play with the code.
 
 ### [Minecraft Clone using OpenGL](https://github.com/Red-Rapious/Minecraft-Clone-OpenGL) - March & April 2021
 
@@ -42,7 +66,13 @@ I worked on this machine learning project as part of my early engineering studie
 ---
 ### [Rankulstone](https://github.com/Red-Rapious/Rankulstone) - January 2020
 
+A *League-of-Legends*-inspired card game I programmed and designed with friends before the release of *Legends of Runeterra*. This was my second important project using `Godot Engine`.
+
 ---
 ### [Project-Roguelike](https://github.com/Red-Rapious/Project-Roguelike) - July & August 2019
 
+A summer project I developed in 2019. Inspired by games like *Enter the Gungeon* and *Soul Knight*, I created a rogue-like with some assets found on [`itch.io`](https://itch.io/game-assets).
+
 ![Project-Roguelike](assets/projects/project-roguelike.png)
+
+I learned a lot about programming in general, game development and game design.
