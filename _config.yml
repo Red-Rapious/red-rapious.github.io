@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
 markdown: GFM
 include: [node_modules]
+title: [Red Rapious's website]
+description: [My resume, personal projects, papers and tutorials.]

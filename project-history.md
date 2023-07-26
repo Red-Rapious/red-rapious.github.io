@@ -4,7 +4,7 @@ I've been programming since I was 10. I mostly learned how to code from online c
 
 Here is a description of most of my programming projects, from the most recent one to the oldest. The complete repositories are available on [my GitHub profile](https://github.com/Red-Rapious).
 
-### [Digits Recognition using an MLP](https://github.com/Red-Rapious/MLP-Digits-Recognition) - July 2023
+### [Digits Recognition using an Multi-layer Perceptron](https://github.com/Red-Rapious/MLP-Digits-Recognition) - July 2023
 
 ### [A multilingual Tic-Tac-Toe](https://github.com/Red-Rapious/Multilingual-Tic-Tac-Toe) - July 2023
 
@@ -16,7 +16,7 @@ Project Euler provides a set of great exercises to practice algorithmic, but I f
 
 ### My TIPE: Car Computer Vision - 2022/2023
 
-I worked on this machine learning project as part of my early engineering studies. The theme of the year was "The city", and I decided to implement the Viola-Jones method to detect STOP signs in images. 
+I worked on this machine learning project as part of my early engineering studies. The theme of the year was *The City*, and I decided to implement the Viola-Jones method to detect STOP signs in images. 
 
 ### [Elements LaTeX](https://github.com/Red-Rapious/Elements-LaTeX) - July 2022
 
