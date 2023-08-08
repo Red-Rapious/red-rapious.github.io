@@ -1,10 +1,21 @@
-# My Project History *(WIP)*
+# My Project History
 
 I've been programming since I was 10 years old. I mostly learned how to code from online courses, before taking more advanced computer science classes.
 
 Here is a description of most of my programming projects, from the most recent one to the oldest. The complete repositories are available on [my GitHub profile](https://github.com/Red-Rapious).
 
 ---
+## [Snake AI using Neural Networks and a Genetic Algorithm](https://github.com/Red-Rapious/Genetic-Snake-AI) - August 2023
+
+![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+
+![Snake AI](assets/projects/snake-ai.png)
+
+
+This project is a sequel to both [MLP-Digits-Recognition](https://github.com/Red-Rapious/MLP-Digits-Recognition) and [Genetic-Birds-Simulator](https://github.com/Red-Rapious/Genetic-Birds-Simulator). I decided to apply the genetic algorithm approach to a situation more complicated than the last time, the game of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)).
+
+The goal was to build a simple Snake game, and to create an artificial intelligence to play the game, and hopefully get high enough scores.
+
 ### [Simulation of birds evolution using a Genetic Algorithm](https://github.com/Red-Rapious/Genetic-Birds-Simulator) - July 2023
 
 ![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
