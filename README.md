@@ -1,5 +1,7 @@
 # [Red Rapious's GitHub Pages website](https://red-rapious.github.io)
 
+![Red Rapious Logo](assets/img/logo_resized.png)
+
 Hi, I'm a student from France, studying **Computer Science** and **Mathematics**.
 
 In my personnal projects, I explored diverse topics including **Deep Learning**, **Computer Graphics** and **User Interfaces**.
