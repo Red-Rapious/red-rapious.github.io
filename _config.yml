@@ -3,4 +3,4 @@ markdown: GFM
 include: [node_modules]
 title: [Red Rapious's website]
 description: ["My resume, personal projects, papers and tutorials."]
-logo: assets/img/logo.png
+logo: assets/profile.png
