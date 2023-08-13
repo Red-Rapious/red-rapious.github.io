@@ -1,7 +1,7 @@
 # main links
 main:
-  - title: "Project History"
-    url: https://red-rapious.github.io/project-history.md
+  #- title: "Project History"
+  #  url: https://red-rapious.github.io/project-history.md
   - title: "About"
     url: https://red-rapious.github.io/README.md
   # - title: "Sample Posts"
