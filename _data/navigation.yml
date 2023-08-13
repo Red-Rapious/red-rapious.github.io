@@ -3,7 +3,7 @@ main:
   #- title: "Project History"
   #  url: https://red-rapious.github.io/project-history.md
   - title: "About"
-    url: https://red-rapious.github.io/README.md
+    url: /project-history/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"

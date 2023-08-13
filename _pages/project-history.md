@@ -1,3 +1,9 @@
+---
+permalink: /project-history/
+title: "Project History"
+toc: true
+---
+
 # My Project History
 
 I've been programming since I was 10 years old. I mostly learned how to code from online courses, before taking more advanced computer science classes.
