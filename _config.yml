@@ -1,8 +1,6 @@
 remote_theme: "mmistakes/minimal-mistakes"
-markdown: GFM
 include: [node_modules]
 plugins: [jekyll-include-cache, jekyll-remote-theme]
-site.description: "My resume, personal projects, papers and tutorials."
 
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -100,7 +98,6 @@ exclude:
   - package.json
   - package-lock.json
   - Rakefile
-  - README
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
