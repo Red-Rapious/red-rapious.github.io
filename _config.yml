@@ -1,6 +1,4 @@
-theme: jekyll-theme-minimal
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 markdown: GFM
 include: [node_modules]
-title: [Red Rapious's website]
-description: ["My resume, personal projects, papers and tutorials."]
-logo: assets/profile.jpg
+plugins: [jekyll-include-cache, jekyll-remote-theme]
