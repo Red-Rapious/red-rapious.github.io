@@ -1,13 +1,12 @@
 ---
 title: "Genetic Snake AI"
+excerpt: "An Artificial Intelligence to play the game Snake, using a Genetic Algorithm."
 tags:
     - deep learning
     - genetic algorithm
     - game ai
     - rust
 ---
-
-An Artificial Intelligence to play the game Snake, using a Genetic Algorithm.
 
 ![Game banner](../assets/projects/snake-ai.png)
 

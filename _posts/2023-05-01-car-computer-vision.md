@@ -1,5 +1,6 @@
 ---
 title: "My TIPE: Car Computer Vision"
+excerpt: "My TIPE project for 2022-2023, using the Viola-Jones method to detect STOP signs in images."
 tags:
     - computer vision
     - python

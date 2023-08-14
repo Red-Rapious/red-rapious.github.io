@@ -1,5 +1,6 @@
 ---
 title: "Genetic Birds Simulator"
+excerpt: "A simulation of birds using Neural Networks and a Genetic Algorithm."
 tags:
     - deep learning
     - genetic algorithm

@@ -1,5 +1,6 @@
 ---
 title: "Project Euler in Rust"
+excerpt: "My Project Euler track in Rust."
 tags:
     - mathematics
     - algorithmic

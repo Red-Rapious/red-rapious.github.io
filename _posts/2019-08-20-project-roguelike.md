@@ -1,5 +1,6 @@
 ---
 title: "Project: Roguelike"
+excerpt: "A 2D open source roguelike, entirely coded during a summer with Godot Engine."
 tags:
     - game
     - godot engine

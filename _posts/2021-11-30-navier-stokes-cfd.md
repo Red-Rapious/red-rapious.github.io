@@ -1,5 +1,6 @@
 ---
 title: "Navier-Stokes Computational Fluid Dynamics (CFD) simulator"
+excerpt: "Fluid dynamics simulator based on the numerical resolution of Navier-Stokes's equations."
 tags:
     - physics
     - python

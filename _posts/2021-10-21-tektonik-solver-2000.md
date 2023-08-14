@@ -1,5 +1,6 @@
 ---
 title: "Tektonik Solver 2000"
+excerpt: "The implementation of a backtracking algorithm to solve "Tektonik" game grids."
 tags:
     - game ai
     - python

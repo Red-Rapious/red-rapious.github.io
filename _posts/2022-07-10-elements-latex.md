@@ -1,5 +1,6 @@
 ---
 title: "Elements LaTeX"
+excerpt: "A cross-platform, electron-based LaTeX editor."
 tags:
     - LaTeX
     - javascript

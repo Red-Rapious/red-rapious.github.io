@@ -1,5 +1,6 @@
 ---
 title: "MLP Digits Recognition"
+excerpt: "An implementation of a Multilayer Perceptron (MLP) neural network from scratch to recognize handwritten digits."
 tags:
     - computer vision
     - deep learning
