@@ -4,6 +4,7 @@ title: "Project History"
 toc: true
 author_profile: true
 layout: single
+toc_label: "Projects"
 ---
 
 <!--# My Project History-->
@@ -13,7 +14,7 @@ I've been programming since I was 10 years old. I mostly learned how to code fro
 Here is a description of most of my programming projects, from the most recent one to the oldest. The complete repositories are available on [my GitHub profile](https://github.com/Red-Rapious).
 
 ---
-## [Snake AI using Neural Networks and a Genetic Algorithm](https://github.com/Red-Rapious/Genetic-Snake-AI) - August 2023
+### [Snake AI using Neural Networks and a Genetic Algorithm](https://github.com/Red-Rapious/Genetic-Snake-AI) - August 2023
 
 ![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
