@@ -2,8 +2,6 @@
 permalink: /project-history/
 title: "Project History"
 toc: true
-author_profile: true
-layout: single
 toc_label: "Projects"
 ---
 

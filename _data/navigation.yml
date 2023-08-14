@@ -1,11 +1,9 @@
 # main links
 main:
-  #- title: "Project History"
-  #  url: https://red-rapious.github.io/project-history.md
-  - title: "About"
+  - title: "Posts"
+    url: /year-archive/
+  - title: "Project History"
     url: /project-history/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
