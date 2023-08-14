@@ -29,11 +29,11 @@ author:
   location         : "France"
   email            : "red.rapious@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:red.rapious@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+    #- label: "Email"
+    #  icon: "fas fa-fw fa-envelope-square"
+    #  url: "mailto:red.rapious@gmail.com"
+    #- label: "Website"
+    #  icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     #- label: "Twitter"
     #  icon: "fab fa-fw fa-twitter-square"
@@ -216,10 +216,11 @@ defaults:
     values:
       layout: single
       author_profile: true
+      toc: true
+      related: true
       read_time: false
       comments: false
       share: false
-      related: true
 
 atom_feed:
   hide: true
