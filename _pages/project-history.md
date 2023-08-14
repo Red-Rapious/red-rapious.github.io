@@ -2,9 +2,11 @@
 permalink: /project-history/
 title: "Project History"
 toc: true
+author_profile: true
+layout: single
 ---
 
-# My Project History
+<!--# My Project History-->
 
 I've been programming since I was 10 years old. I mostly learned how to code from online courses, before taking more advanced computer science classes.
 
@@ -15,7 +17,7 @@ Here is a description of most of my programming projects, from the most recent o
 
 ![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
-![Snake AI](assets/projects/snake-ai.png)
+![Snake AI](../assets/projects/snake-ai.png)
 
 
 This project is a sequel to both [MLP-Digits-Recognition](https://github.com/Red-Rapious/MLP-Digits-Recognition) and [Genetic-Birds-Simulator](https://github.com/Red-Rapious/Genetic-Birds-Simulator). I decided to apply the genetic algorithm approach to a situation more complicated than the last time, the game of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)).
@@ -26,7 +28,7 @@ The goal was to build a simple Snake game, and to create an artificial intellige
 
 ![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
-![Genetic Birds](assets/projects/genetic-birds.png)
+![Genetic Birds](../assets/projects/genetic-birds.png)
 
 This project is a kind of sequel to [MLP-Digits-Recognition](), an implementation of a neural network from scratch. This time, I used [this great tutorial](https://pwy.io/posts/learning-to-fly-pt1/) as a starting point, to train the neural network with a genetic algorithm, instead of backpropagation.
 
@@ -40,7 +42,7 @@ This simulation, coded in Rust, is meant to be used using only a web browser, th
 
 ![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
-![Digits Recognition](assets/projects/digits-mlp.png)
+![Digits Recognition](../assets/projects/digits-mlp.png)
 
 This is one of my latest project, which was created following [3Blue1Brown's Neural Networks series](https://youtu.be/aircAruvnKk). The goal of it is to implement a Multilayer Perceptron (MLP) neural network from scratch in Rust, and use it to recognize handwritten digits from the [MNIST dataset](http://yann.lecun.com/exdb/mnist/).
 
@@ -52,7 +54,7 @@ This gave me a better understanding of how neural networks work, before extensiv
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
-![TIC TAC TOE](assets/projects/tic-tac-toe.png)
+![TIC TAC TOE](../assets/projects/tic-tac-toe.png)
 
 The very first program I wrote entirely myself was a Tic-Tac-Toe that I coded in `C`, back in 2016. I still think that a Tic-Tac-Toe is a great mini-project to learn any programming language, so I decided to create this repository, with the same CLI program, written in various languages. 
 
@@ -86,14 +88,14 @@ I worked on this machine learning project as part of my early engineering studie
 ![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![](https://img.shields.io/badge/Electron-02569B?style=for-the-badge&logo=electron&logoColor=white)
 
-![Elements LaTeX](assets/projects/elements-latex.png)
+![Elements LaTeX](../assets/projects/elements-latex.png)
 
 ---
 ### [Animated Navier-Stokes Computational Fluid Dynamics (CFD) simulator](https://github.com/Red-Rapious/Navier-Stokes-CFD) - November & December 2021
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-![Navier-Stokes CFD](assets/projects/navier-stokes-cfd.gif)
+![Navier-Stokes CFD](../assets/projects/navier-stokes-cfd.gif)
 
 While looking for interesting topics for my TIPE (see above), I came across [this amazing tutorial series](https://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/) on Computational Fluid Dynamics. While following the course, I decided to implement an animated version of the simulation, using `Matplotlib`.
 
@@ -103,7 +105,7 @@ While looking for interesting topics for my TIPE (see above), I came across [thi
 
 My maths teacher in 2021-2022 used to give us Tectonic Puzzles, a game similar to Sudoku. During the holidays, I decided to create a script to solve these, using backtracking.
 
-![Tektonik Solver](assets/projects/tektonik-solver.png)
+![Tektonik Solver](../assets/projects/tektonik-solver.png)
 
 The code is also [hosted on `repl.it`](https://replit.com/@redrapious/TektonikSolver2000#main.py), so you can go ahead and try the program in your browser, and even play with the code.
 
@@ -111,7 +113,7 @@ The code is also [hosted on `repl.it`](https://replit.com/@redrapious/TektonikSo
 
 ![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-![Minecraft Clone](assets/projects/minecraft-clone.png)
+![Minecraft Clone](../assets/projects/minecraft-clone.png)
 
 ---
 ### [Rankulstone](https://github.com/Red-Rapious/Rankulstone) - January 2020
@@ -127,7 +129,7 @@ A *League-of-Legends*-inspired card game I programmed and designed with friends 
 
 A summer project I developed in 2019. Inspired by games like *Enter the Gungeon* and *Soul Knight*, I created a rogue-like with some assets found on [`itch.io`](https://itch.io/game-assets).
 
-![Project-Roguelike](assets/projects/project-roguelike.png)
+![Project-Roguelike](../assets/projects/project-roguelike.png)
 
 
 I learned a lot about programming in general, game development and game design.
