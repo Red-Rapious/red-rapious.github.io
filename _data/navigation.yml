@@ -2,9 +2,7 @@
 main:
   - title: "Posts"
     url: /year-archive/
+  - title: "Tutorials"
+    url: /tutorials/
   - title: "Project History"
     url: /project-history/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/

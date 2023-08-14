@@ -1,5 +1,6 @@
 ---
 title: "Multilingual Tic-Tac-Toe"
+excerpt: "Implementations of the Tic-Tac-Toe game and a simple AI in multiple languages."
 tags:
     - c
     - ocaml

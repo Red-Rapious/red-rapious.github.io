@@ -222,5 +222,23 @@ defaults:
       comments: false
       share: false
 
+  # _tutorials
+  - scope:
+      path: ""
+      type: tutorials
+    values:
+      layout: single
+      author_profile: true
+      toc: true
+      share: true
+      related: true
+      read_time: true
+      comments: false
+
 atom_feed:
   hide: true
+
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:path/
