@@ -16,13 +16,14 @@ The task is simple: given a grayscale image of `28px` side representing a handwr
 
 
 ## Prerequisites
-No advanced knowledge on neural networks is necessary to follow this series. I still recommend basic understanding of what a neural network is. If you don't know what a neural network is, or if you need a refresh, I suggest the incredible [3blue1brown's video series on neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Seriously, it's probably the best explanation on neural network one could find.
+No advanced knowledge on neural networks is necessary to follow this series. I still recommend basic understanding of what a neural network is. If you don't know what a neural network is, or if you need a refresh, I suggest the incredible [3blue1brown's video series on neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Seriously, it's probably the best explanation on neural networks one could find.
 
 {% include video id="aircAruvnKk" provider="youtube" %}
 
 Furthermore, the code for this tutorial will be written in Rust. Once again, nothing too advanced, but a basic understanding of Rust is recommended. I will explain most details as we move forward, but understanding the code you'll write is the best way to learn. 
 
-We will only use Rust's basic features such as `struct`, `enum`, and `Vector`. If you're familiar with these concepts, you'll be able to follow along.{: .notice--info}
+We will only use Rust's basic features such as `struct`, `enum`, and `Vector`. If you're familiar with these concepts, you'll be able to follow along.
+{: .notice--info}
 
 ## Steps of this tutorial
 ### Part 1: The Neural Network
