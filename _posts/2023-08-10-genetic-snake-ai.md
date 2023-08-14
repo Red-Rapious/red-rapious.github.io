@@ -1,9 +1,10 @@
 ---
 title: "Genetic Snake AI"
 tags:
-    - Machine Learning
-    - Genetic Algorithm
-    - Game AI
+    - deep learning
+    - genetic algorithm
+    - game ai
+    - rust
 ---
 
 An Artificial Intelligence to play the game Snake, using a Genetic Algorithm.
@@ -13,7 +14,7 @@ An Artificial Intelligence to play the game Snake, using a Genetic Algorithm.
 ## About
 The goal was to build a simple Snake game, and to create an artificial intelligence to play the game, and hopefully get high enough scores.
 
-![Snake Playing](../assets/snake-playing.gif)
+<!--![Snake Playing](../assets/snake-playing.gif)-->
 
 ## Motivation
 This project is a sequel to both [MLP-Digits-Recognition](https://github.com/Red-Rapious/MLP-Digits-Recognition) and [Genetic-Birds-Simulator](https://github.com/Red-Rapious/Genetic-Birds-Simulator). I decided to apply the genetic algorithm approach to a situation more complicated than the last time, the game of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)).
