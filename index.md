@@ -10,7 +10,7 @@ Hi, I'm a student from France, studying **Computer Science** and **Mathematics**
 
 In my personnal projects, I explored diverse topics including **Deep Learning**, **Computer Graphics** and **User Interfaces**.
 
-You can explore my Project History [here](project-history.md).
+You can explore my Project History [here](https://red-rapious.github.io/project-history/).
 
 ## Latest projects
 This summer, I've been working on **Deep Learning**:

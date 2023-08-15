@@ -10,5 +10,4 @@ A summer project I developed in 2019. Inspired by games like *Enter the Gungeon*
 
 ![Project-Roguelike](../assets/projects/project-roguelike.png)
 
-
 I learned a lot about programming in general, game development and game design.
