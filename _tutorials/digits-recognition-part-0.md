@@ -30,10 +30,12 @@ We will only use Rust's basic features such as `struct`, `enum`, and `Vector`. I
 I will detail the neural network we will use, and we will implement from scratch a neural network, randomly initialised. We will also code the central function called `feed_forward`, that almost magically transforms our input into an output.
 
 ### Part 2: Network evaluation
-We will use the MNIST dataset to load some actual images, using the `mnist` crate. We will write some functions to test the network we just build... and see how poorly it performs just yet. That will obviously lead us to...
+We will use the MNIST dataset to load some actual images, using the `mnist` crate. We will write some functions to test the network we just build... and see how *poorly* it performs just yet. That will obviously lead us to...
 
 ### Part 3: Network training
 We will see how to transform a random dumb network into a hopefully-smart digit recogniser. We will also train the network on a few images to check that everything is working before the big finale.
 
 ### Part 4: Saving and real-size training
-This is where we'll discover how long the training process actually takes, and why we need to be able to load and save trained networks. Finally, we will have a working network, with some pretty sweet accuracy.
+This is where we'll discover how long the training process actually takes, and why we need to be able to load and save trained networks. Finally, we will have a working network, hopefully with some pretty sweet accuracy. *We'll run some benchmarks to flex.*
+
+That being said, we are ready to begin our journey in the world of deep learning. See you next time!
