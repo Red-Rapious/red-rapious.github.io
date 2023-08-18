@@ -1,7 +1,7 @@
 ---
 title: "Handwritten digits recognition from scratch in Rust - Part 1: The Neural Netowrk"
 excerpt: "The first step of the series: we'll implement the neural network."
-permalink: /digits-recognition-part-0/
+permalink: /digits-recognition-part-1/
 toc: true
 toc_label: "The Neural Network"
 tags:
@@ -56,10 +56,116 @@ The graphs of Sigmoid and ReLU.
 ## Let's code!
 Enough tchit-tchat, let's get to the fun part, shall we?
 ### Project initialisation
+We'll use [`Cargo`](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html) to simplify the setup of our project. Enter in your terminal:
+```console
+$ cargo new digits_recognition
+```
+
+`Cargo` will then create for you a new folder containing default files:
+```
+digits_recognition
+├── src
+│   └── main.rs
+├── Cargo.toml
+└── .gitignore
+```
+
+If you enter this new folder, you can make sure that eveything is working by *running* the project:
+```console
+$ cd digits_recognition
+$ cargo run
+   Compiling digits_recognition v0.1.0 (.../digits_recognition)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.99s
+     Running `target/debug/digits_recognition`
+Hello, world!
+```
+
+So far, so good.
 
 ### The `NeuralNetwork` struct
+Let's keep things clean and avoid coding directly in the `main.rs` file, that we will use later as a launcher. Let's create a new `neural_network.rs` file in the `src` folder, and add a simple `struct` called... `NeuralNetwork`.
+
+```rust
+/// A structure containing the actual neural network layers, weights, and biases.
+struct NeuralNetwork;
+```
+
+What does our neural network need? A way to store the layers sizes, plus weights, biases, and an activation function:
+
+```rust
+/// A structure containing the actual neural network layers, weights, and biases.
+pub struct NeuralNetwork {
+    /// The number of neurons in each layer, including first and last layers.
+    layers: Vec<usize>,
+    /// The weight of each synapse.
+    weights: Vec< Vec<Vec<f64>> >,
+    /// The bias of each synapse.
+    biases: Vec< Vec<f64> >,
+    /// The activation function and its derivative.
+    activation_function: ...
+}
+```
+
+**Note:** I use `///` to add documentation comments, that will be nicely displayed when hovering identifiers, with tools like `rust-analyser`.
+{: .notice--info}
+
+We already discussed the representation of one weight matrix, and one bias vector. Here, we contain them in a new `Vec`: `weights` is a `Vector` of matrices. Same goes for `biases`, a `Vector` of vectors.
+
+We simply need to find a way to represent our activation function. We *could* store directly a function with type `f64 -> f64`, but there's two issues with this. First, it's not easy in Rust: the type `dyn Fn(f64) -> f64` cannot easily be stored, and passing it as an argument everytime we need to use it is quite ugly. Second, we do not only need the activation function, but also its derivative. Hence, it would be clean to be able to "group up" a function and its derivative. 
+
+<!--The way I decided to approach it is by using a `Trait`. If you're not familiar with traits, you can see it as a way to ask for a generic object with specific methods that you can call from it. For instance, let's create an `ActivationFunction` trait:
+```rust
+pub trait ActivationFunction {
+    fn activate(&self, x: f64) -> f64;
+}
+```
+This way, we can simply ask our `activation_function` field from `NeuralNetwork` to store *any object that implements the `ActivationFunction` trait*:
+```rust
+pub struct NeuralNetwork {
+    ...
+    /// The activation function and its derivative.
+    activation_function: dyn ActivationFunction
+}
+```-->
+
+The simplest way I found is to create a dedicated `struct` for our activation function. For now, let's just create a new `struct`:
+```rust
+pub struct ActivationFunction;
+```
+And specify that we want the `activation_function` field from `NeuralNetwork` to be of type `ActivationFunction`:
+```rust
+pub struct NeuralNetwork {
+    ...
+    /// The activation function and its derivative.
+    activation_function: ActivationFunction
+}
+```
+We will handle the methods from `ActivationFunction` when we will need them.
 
 ### Network initialisation
+Now that we have our `struct` outline, we will need a way to create a new, random neural network. Let's call this function `random`. Since our weights and biases will be random, we only take `layers` and `activation_function` as arguments:
+
+```rust
+impl NeuralNetwork {
+    /// Initialise a new Neural Network with random weights and biases.
+    pub fn random(
+        layers: Vec<usize>, 
+        activation_function: ActivationFunction
+        ) -> Self {
+        
+        Self {
+            layers,
+            weights: todo!(),
+            biases: todo!(),
+            activation_function
+        }
+    }
+}
+```
+
+**Tip:** The `todo!` macro comes very handy to write parts of your code later, while making sure that Rust and `cargo check` understands that's there's no bug. This avoids having your entire screen red because of errors when using the handy `rust-analyser`.
+{: .notice--info}
+
 #### Random weights and biases
 
 #### Activation function
