@@ -6,6 +6,7 @@ toc: true
 toc_label: "Network Evaluation"
 tags:
     - deep learning
+    - rust
 ---
 
 Welcome back to this series about digits recognition! Today, we will leave the abstract world of neural network and linear algebra, and start loading some actual images of actual digits. We'll also feed the to our network, and see if an untrained network performs well - spoiler alert: it doesn't.
