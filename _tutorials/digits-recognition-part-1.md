@@ -474,11 +474,36 @@ pub fn feed_forward(&self, mut activation: Vec<f64>) -> Vec<f64> {
 **Note:** We can use a more idiomatic Rust syntax instead of the last `for` loop: `activation = activation.iter().map(self.activation_function.activation).collect();`. Iterators are a center part of Rust, but can be a bit tricky when coming from other programming languages. What we simply do here, is iterate over the elements of activation with `.iter()`, then map the activation function to each element using `.map(...)`. Finally, we transform our modified iterator back to a `Vec` using `.collect()`.
 {: .notice--info}
 
+That was a lot of code for what looked like a simple function. But that's the price to pay for not using slightly complex crates such as `nalgebra`. Even though, I find that understanding basic matrix multiplication is much needed when you're using matrices. Now, don't worry, we're almost done with the neural network.
 
 ### Prediction
+To have a fully working, untrained digit recogniser, we just need to transform the activations of output layers into... a digit. Compared to what we just did, it will look like a piece of cake. Let's code a `predict` function, that takes an "image" as an input (*de facto*, a `784`-long `Vec<f64>`), and that returns a digit (stored as a `u8` integer):
 
+```rust
+/// Predicts the digit in a given image.
+pub fn predict(&self, input: Vec<f64>) -> u8 {
+    // Get the output layer's activations
+    let result = self.feed_forward(input);
+
+    // Select the highest activation of the output layer.
+    let mut maxi = (result[0], 0);
+    for i in 1..result.len() { // we start at 1, since values of index 0 is already set as the current maxi
+        if result[i] > maxi.0 {
+            maxi = (result[i], i);
+        }
+    }
+    maxi.1 as u8
+}
+```
 
 ## Wrapping it up
+Good job, Part 1 is done! Let's summarize it all.
 ### What we've done
+We've coded a lot of important parts of our neural network:
+- The random initialisation
+- The `feed_forward` mechanism, with its linear algebra functions
+- A nice way to store different activation functions
+- The `predict` function
 
 ### What we will do next time
+Next time, we'll actually *use* the neural network! We'll start by loading some images, then we'll predict which digit they contain with our random neural network. See you next time!
