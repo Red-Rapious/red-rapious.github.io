@@ -5,6 +5,8 @@ tags:
     - deep learning
     - genetic algorithm
     - rust
+header:
+  teaser: /assets/teaser-images/birds-simulator.png
 ---
 
 ![Genetic Birds](../assets/projects/genetic-birds.png)
