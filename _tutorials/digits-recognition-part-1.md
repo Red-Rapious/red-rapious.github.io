@@ -167,6 +167,122 @@ impl NeuralNetwork {
 {: .notice--info}
 
 #### Random weights and biases
+To build the `Vector`s containing the weights and biases, we'll start with an empty `vec![]`, and progressively add the generated matrices/vectors. The hard part is to keep in my the dimensions of the matrices we want: the weights connecting the layer number $i$ to the layer number $i+1$ needs to have `layers[i+1]` lines and `layers[i]` columns.
+```rust
+// Initially empty vectors
+let mut weights = vec![];
+let mut biases = vec![];
+
+// Note the -1: the output layer is not connected to anything
+for i in 0..layers.len()-1 { 
+    let mut w_matrix = vec![];
+    let mut b_vector = vec![];
+
+    for _ in 0..layers[i+1] {
+        // Push a random bias in the biases vector
+        b_vector.push(todo!()); 
+        // TODO: generate a random number
+
+        // Push a random line of weights in the matrix
+        let mut line = vec![];
+        for _ in 0..layers[i] {
+            line.push(todo!());
+            // TODO: generate a random number
+        }
+        w_matrix.push(line);
+    }
+    weights.push(w_matrix);
+    biases.push(b_vector);
+}
+```
+The only part now missing is the actual random numbers.
+
+To generate random weights and biases, we will need a random numbers generator, provided by the `rand` crate. While we're at it, let's also add the `rand-distr` crate to our project; it will allow us to specify to [probability distribution](https://en.wikipedia.org/wiki/Normal_distribution) of our number generator. Basically, we want our random numbers to be distributed somewhere around `0.0`.
+
+To add the crates to your project, insert the following lines to your `Cargo.toml` file:
+```
+...
+
+[dependencies]
+rand = "0.8.4"
+rand_distr = "0.4.2"
+```
+And include the crates in your project by adding, at the beginning of your `neural_network.rs` file:
+```rust 
+use rand_distr::{Normal, Distribution};
+```
+
+The base code to generate a random number, using the normal distribution, will be:
+```rust
+// Normal distribution sampler
+let normal = Normal::new(0.0, 1.0).unwrap(); 
+// 0 is the mean, and 1 is the standard deviation
+
+// Random number generator
+let mut rng = rand::thread_rng();
+
+// Generated number
+let number = normal.sample(&mut rng);
+```
+
+Let's add this to the code we previously written:
+```rust
+// Normal distribution sampler
+let normal = Normal::new(0.0, 1.0).unwrap(); 
+// Random number generator
+let mut rng = rand::thread_rng();
+
+...
+
+for i in 0..layers.len()-1 { 
+    ...
+
+    for _ in 0..layers[i+1] {
+        // Push a random bias in the biases vector
+        b_vector.push(normal.sample(&mut rng)); 
+
+        ...
+
+        for _ in 0..layers[i] {
+            // Push a random weight in the weights matrix line
+            line.push(normal.sample(&mut rng));
+        }
+
+        ...
+    }
+    ...
+}
+```
+
+Putting it all together:
+```rust
+pub fn random(layers: Vec<usize>, activation_function: ActivationFunction) -> Self {
+    let normal = Normal::new(0.0, 1.0).unwrap(); 
+    let mut rng = rand::thread_rng();
+
+    let mut weights = vec![];
+    let mut biases = vec![];
+
+    for i in 0..layers.len()-1 { 
+        let mut w_matrix = vec![];
+        let mut b_vector = vec![];
+
+        for _ in 0..layers[i+1] {
+            b_vector.push(normal.sample(&mut rng)); 
+
+            let mut line = vec![];
+            for _ in 0..layers[i] {
+                line.push(normal.sample(&mut rng));
+            }
+            w_matrix.push(line);
+        }
+        weights.push(w_matrix);
+        biases.push(b_vector);
+    }
+    
+    Self { layers, weights, biases, activation_function }
+}
+```
 
 #### Activation function
 
