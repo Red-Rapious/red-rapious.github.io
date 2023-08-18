@@ -391,8 +391,89 @@ Let's see how my previous remarks translate to the new function:
 - Our function does return a new `Vec`. It's not as efficient as our first function, but there is not simple way to avoid it.
 - Both references are unmutable. Since we're not modifying anything, but starting fresh, we do not need to have mutable objects.
 
-
 #### Activation function
+We can't procrastinate the coding of `ActivationFunction` any further. In `feed_forward`, we wrote:
+```rust
+activation[i] = self.activation_function.activation(activation[i]);
+```
+Therefore, we have to build the `activation` function, of `ActivationFunction`.
+
+For now, all we have is an empty `struct`:
+```rust
+pub struct ActivationFunction;
+```
+What we will do, is instead of storing the activation **function**, we will only store its **type**. Then, when we'll call `activation_function.activation`, we'll return the adapted result depending on the stored type.
+
+The type will be an enum:
+```rust
+pub enum ActivationFunctionType {
+    Sigmoid,
+    ReLU
+}
+
+pub struct ActivationFunction {
+    /// The activation function, which will dictate the main function and its derivative.
+    function_type: ActivationFunctionType
+}
+
+impl ActivationFunction {
+    /// Create a new ActivationFunction of given type.
+    pub fn new(function_type: ActivationFunctionType) -> Self {
+        ActivationFunction { function_type }
+    }
+}
+```
+
+And the `activation` function looks like this:
+```rust
+/// The main activation function, depends on the type.
+pub fn activation(&self, x: f64) -> f64 {
+    match self.function_type {
+        ActivationFunctionType::Sigmoid => sigmoid(x),
+        ActivationFunctionType::ReLU => ReLU(x)
+    }
+}
+
+/// Logistic function.
+fn sigmoid(x: f64) -> f64 {
+    1.0 / (1.0 + (-x).exp())
+}
+
+/// Rectification function.
+#[allow(non_snake_case)]
+fn ReLU(x: f64) -> f64 {
+    f64::max(x, 0.0)
+}
+```
+
+**Note:** Calling a function `ReLU` upsets Rust a little, since it does not respect the [`snake_case` **naming convention**](). As a general rule of thumb, one should always follow Rust's conventions. But this time, just this time, we'll make an exception, since this makes more sense than `relu`, which isn't the common spelling. To tell Rust "don't worry, I know what I'm doing", we just have to disable the warning with the `#[allow(non_snake_case)]` line above the function's name.
+{: .notice--info}
+
+We now have all the parts to have a working `feed_forward` function! Let's put it all together:
+
+```rust
+use crate::linear_algebra::*; // Includes the linear algebra functions from the other file
+
+/// Computes the activations of the output layer, given the activations of the input layer.
+pub fn feed_forward(&self, mut activation: Vec<f64>) -> Vec<f64> {
+    for i in 0..self.layers.len()-1 {
+        // Multiply the activation by the weights matrix
+        activation = matrix_vector_product(&self.weights[i], &activation);
+        // Add the biases
+        vectors_sum(&mut activation , &self.biases[i]);
+        
+        // Apply the activation function to every coefficient
+        for i in 0..activation.len() {
+            activation[i] = self.activation_function.activation_function(activation[i]);
+        }
+    }
+    activation
+}
+```
+
+**Note:** We can use a more idiomatic Rust syntax instead of the last `for` loop: `activation = activation.iter().map(self.activation_function.activation).collect();`. Iterators are a center part of Rust, but can be a bit tricky when coming from other programming languages. What we simply do here, is iterate over the elements of activation with `.iter()`, then map the activation function to each element using `.map(...)`. Finally, we transform our modified iterator back to a `Vec` using `.collect()`.
+{: .notice--info}
+
 
 ### Prediction
 
