@@ -16,7 +16,7 @@ The task is simple: given a grayscale image of `28px` side representing a handwr
 
 
 ## Prerequisites
-No advanced knowledge on neural networks is necessary to follow this series. I still recommend basic understanding of what a neural network is. If you don't know what a neural network is, or if you need a refresh, I suggest the incredible [3blue1brown's video series on neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Seriously, it's probably the best explanation on neural networks one could find.
+No advanced knowledge on neural networks is necessary to follow this series. I still recommend basic understanding of what a neural network is. If you don't know what a neural network is, or if you need a refresh, I suggest the incredible [3Blue1Brown's video series on neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Seriously, it's probably the best explanation on neural networks one could find.
 
 {% include video id="aircAruvnKk" provider="youtube" %}
 

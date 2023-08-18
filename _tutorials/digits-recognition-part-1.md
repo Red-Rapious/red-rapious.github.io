@@ -1,5 +1,5 @@
 ---
-title: "Handwritten digits recognition from scratch in Rust - Part 1: The Neural Netowrk"
+title: "Handwritten digits recognition from scratch in Rust - Part 1: The Neural Network"
 excerpt: "The first step of the series: we'll implement the neural network."
 permalink: /digits-recognition-part-1/
 toc: true
@@ -17,7 +17,7 @@ After a quick recap about what we want to achieve, we will initialise our `Cargo
 As you will see in Part 2, the images we'll be working with have a `28px` side. So, to be able to recognise the digits, we will need a kind of "machine" that takes `28px` images as an input. In our case, we don't care much about color, so we'll work with grayscale images. This means that each pixel have a value somewhere between `0` and `1`, `0` being the darkest black and `1` being the lighest white. Hence, the machine we need to build takes as an input `28*28 = 784` floating numbers between `0` and `1`.
 
 ![Image as input](../assets/tutorials/digits-recognition/pixels-as-input-inverted.png)
-Our image as an input. *(Credit: 3blue1brown)*
+Our image as an input. *(Credit: 3Blue1Brown)*
 {: .text-center}
 
 Code-wise, our neural network will then take as an input a `Vec<f64>`, of size `784`.
@@ -33,7 +33,7 @@ So how can our neural network tell us which digit it detected? By using `10` out
 ### The intermediate layers
 The choice of the number and sizes of intermediate layers is kind of... random? As long as the intermediate layers are not too small nor too large, we should be good. And one great thing about coding, is that you can adjust things up at the end. 
 
-Hence, I chose **two** intermediate layers, of **`16` neurons each** (kind of a reference to 3blue1brown's video), but out implementation of the neural network will take these as an argument, making it *super-convenient* to change later on. 
+Hence, I chose **two** intermediate layers, of **`16` neurons each** (kind of a reference to 3Blue1Brown's video), but out implementation of the neural network will take these as an argument, making it *super-convenient* to change later on. 
 
 To do so, we'll store the size of each layer inside a `Vec<usize>`. If the intermediate layers can be changed by the "user", we'll have to make sure that the first element of the `Vec` is a layer of `784` input neurons, and that the last one is a layer of `10` output neurons.
 
