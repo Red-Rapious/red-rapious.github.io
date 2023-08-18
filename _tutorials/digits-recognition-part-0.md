@@ -6,6 +6,7 @@ toc: true
 toc_label: "Introduction"
 tags:
     - deep learning
+    - rust
 ---
 
 Welcome! In this series, we will implement a detector capable of recognising handwritten digits.

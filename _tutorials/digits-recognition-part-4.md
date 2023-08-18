@@ -6,6 +6,7 @@ toc: true
 toc_label: "Saving and real-size training"
 tags:
     - deep learning
+    - rust
 ---
 
 Welcome back to the final part of this series! Thank you for following so far. Today, we'll wrap everything up by adding  small improvements, and we'll finaly train our network on a serious amount of data.

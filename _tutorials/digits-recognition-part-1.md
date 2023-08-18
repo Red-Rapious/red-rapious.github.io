@@ -6,6 +6,7 @@ toc: true
 toc_label: "The Neural Network"
 tags:
     - deep learning
+    - rust
 ---
 
 Welcome back to this series about digits recognition! Today, we'll directly dive in the center of our topic, by implementing the neural network.

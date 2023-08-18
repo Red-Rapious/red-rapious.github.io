@@ -6,6 +6,7 @@ toc: true
 toc_label: "Network Training"
 tags:
     - deep learning
+    - rust
 ---
 
 Welcome back to this series about digits recognition! Today, we're entering the difficult-but-rewarding part of the process. We'll turn our randomly-generated neural network into a trained expert of digits recognition.
