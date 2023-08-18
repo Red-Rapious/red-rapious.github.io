@@ -5,6 +5,8 @@ tags:
     - computer vision
     - deep learning
     - rust
+header:
+  teaser: /assets/teaser-images/digits-mlp.png
 ---
 
 ![Digits Recognition](../assets/projects/digits-mlp.png)

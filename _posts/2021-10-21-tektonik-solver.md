@@ -4,6 +4,8 @@ excerpt: "The implementation of a backtracking algorithm to solve Tektonik game 
 tags:
     - game ai
     - python
+header:
+  teaser: /assets/teaser-images/tektonik-solver.png
 ---
 
 My maths teacher in 2021-2022 used to give us Tectonic Puzzles, a game similar to Sudoku. During the holidays, I decided to create a script to solve these, using backtracking.

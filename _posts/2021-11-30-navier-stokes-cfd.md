@@ -4,6 +4,8 @@ excerpt: "Fluid dynamics simulator based on the numerical resolution of Navier-S
 tags:
     - physics
     - python
+header:
+  teaser: /assets/teaser-images/navier-stokes.png
 ---
 
 ![Navier-Stokes CFD](../assets/projects/navier-stokes-cfd.gif)

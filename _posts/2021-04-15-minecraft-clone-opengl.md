@@ -5,6 +5,8 @@ tags:
     - computer graphics
     - game
     - c++
+header:
+  teaser: /assets/teaser-images/minecraft-clone.png
 ---
 
 ![Minecraft Clone](../assets/projects/minecraft-clone.png)

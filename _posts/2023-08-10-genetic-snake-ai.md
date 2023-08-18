@@ -6,6 +6,8 @@ tags:
     - genetic algorithm
     - game ai
     - rust
+header:
+  teaser: /assets/teaser-images/snake-ai.png
 ---
 
 ![Game banner](../assets/projects/snake-ai.png)
