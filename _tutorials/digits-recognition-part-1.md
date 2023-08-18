@@ -90,6 +90,12 @@ Let's keep things clean and avoid coding directly in the `main.rs` file, that we
 struct NeuralNetwork;
 ```
 
+In the `main.rs` file, also add on top:
+```rust
+mod neural_network;
+```
+This is not absolutely mandatory right now, but if you're using `rust-analyser` - and you should, it will take into account the new file.
+
 What does our neural network need? A way to store the layers sizes, plus weights, biases, and an activation function:
 
 ```rust
@@ -284,11 +290,109 @@ pub fn random(layers: Vec<usize>, activation_function: ActivationFunction) -> Se
 }
 ```
 
-#### Activation function
 
 ### Feeding forward
+Creating a new neural network is nice, but using it is even better. So, let's implement a feed-forward function. 
+
+What we want to do, is tell the neural network "Hey, take this 784-long `Vec<f64>`, and give me a 10-long `Vec<f64>` back":
+```rust 
+/// Computes the activations of the output layer, given the activations of the input layer.
+pub fn feed_forward(&self, mut activation: Vec<f64>) -> Vec<f64> {
+    todo!()
+}
+```
+
+This process is called feed-forward, because the neural network will actually compute the activations layer by layer, going forward from the input layer towards the output layer. As a reminder, to move from one layer to the next one, the different steps are:
+- Multiply the latest activation vector by the weights matrix
+- Add the biases to it
+- Apply each the activation function to each coefficient
+
 #### Function outline
+This translates pretty smoothly into code:
+```rust
+/// Computes the activations of the output layer, given the activations of the input layer.
+pub fn feed_forward(&self, mut activation: Vec<f64>) -> Vec<f64> {
+    for i in 0..self.layers.len()-1 {
+        // Multiply the activation by the weights matrix
+        activation = self.weights[i] * activation;
+
+        // Add the biases
+        activation += self.biases[i];
+        
+        // Apply the activation function to each coefficient
+        for i in 0..activation.len() {
+            activation[i] = self.activation_function.activation(activation[i]);
+        }
+    }
+    activation
+}
+```
+*oh waitt* this is not Python, so we can't just mutliply and add `Vec`s...
+
+Well then, let's get into...
 #### Unoptimised linear algebra
+Programming matrix multiplication and linear algebra in general is an entire topic, [dare I say an art](https://gist.github.com/nadavrot/5b35d44e8ba3dd718e595e40184d03f0). But today, for the sake of simplicity, we're not gonna do art. 
+
+We have to code two functions: one to multiply a matrix by a vector, and one to add a vector to another vector. Let's create a new file called `linear_algebra.rs`, and add our two functions outlines:
+
+```rust
+/// Given a matrix `A` and a vector `X`, returns the vector `AX`.
+pub fn matrix_vector_product(matrix: &Vec<Vec<f64>>, vector: &Vec<f64>) -> Vec<f64> {
+    assert_eq!(matrix[0].len(), vector.len(), "The matrix and vector shapes are incompatible.");
+
+    todo!()
+}
+
+/// Given one mutable vector `X1` and another vector `X2` of the same size, adds `X2` to `X1`.
+pub fn vectors_sum(vector1: &mut Vec<f64>, vector2: &Vec<f64>) {
+    assert_eq!(vector1.len(), vector2.len(), "The two vectors have different sizes.");
+
+    todo!()
+}
+```
+
+The simple part first: `vectors_sum`, which is close to trivial.
+```rust
+/// Given one mutable vector `X1` and another vector `X2` of the same size, adds `X2` to `X1`.
+pub fn vectors_sum(vector1: &mut Vec<f64>, vector2: &Vec<f64>) {
+    assert_eq!(vector1.len(), vector2.len(), "The two vectors have different sizes.");
+
+    for i in 0..vector1.len() {
+        vector1[i] += vector2[i];
+    }
+}
+```
+Even though, there's a few things worth mentionning:
+- Note that we use references (`&`) as arguments. This allows Rust to avoid moving the vectors, which makes the code much more efficient. Without references, Rust would actually complain, because it knows that moving `Vec`s is time-consuming.
+- Only the first reference is mutable (`mut`). Makes sense, we do not want to modify the bias vector.
+- Our function does not return anything: the function will be called, the first vector will be modified, but nothing is returned. This is actually much more efficient than allocating new memory for the result of `vector1 + vector2`, and using this new memory space as our base for future operations.
+
+Now, let's get to the though one. If you forgot [how to multiply a matrix and a vector]() by hand, try to reactivate your memory before actually entering the coding part.
+```rust
+/// Given a matrix `A` and a vector `X`, returns the vector `AX`.
+pub fn matrix_vector_product(matrix: &Vec<Vec<f64>>, vector: &Vec<f64>) -> Vec<f64> {
+    assert_eq!(matrix[0].len(), vector.len(), "The matrix and vector shapes are incompatible.");
+
+    // Initialise an empty vector
+    let mut result = Vec::with_capacity(matrix.len());
+    for j in 0..matrix.len() {
+        result.push(0.0); // add a null coefficient to the vector
+
+        for i in 0..vector.len() {
+            // add the result of the multiplication to the coefficient
+            result[j] += matrix[j][i] * vector[i]
+        }
+    }
+    result
+}
+```
+Let's see how my previous remarks translate to the new function:
+- We also use references, for the same reasons.
+- Our function does return a new `Vec`. It's not as efficient as our first function, but there is not simple way to avoid it.
+- Both references are unmutable. Since we're not modifying anything, but starting fresh, we do not need to have mutable objects.
+
+
+#### Activation function
 
 ### Prediction
 
