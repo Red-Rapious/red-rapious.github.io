@@ -22,7 +22,7 @@ Our image as an input. *(Credit: 3Blue1Brown)*
 
 Code-wise, our neural network will then take as an input a `Vec<f64>`, of size `784`.
 
-**Note:** For this tutorial, I decided to use `Vector`s to represent many structures. There's multiple alternatives, like using arrays, or even vectors and matrices from the [`nalgebra`](https://www.nalgebra.org) crate (more on that later). For the sake of simplicity, we'll stick with `Vector`s since they can be dynamically allocated.
+**Note:** For this tutorial, I decided to use `Vector`s to represent many structures. There's multiple alternatives, like using arrays, or even vectors and matrices from the [`nalgebra`](https://www.nalgebra.org) crate (more on that later). For the sake of simplicity, we'll stick with `Vector`s and not arrays, since they can be dynamically allocated.
 {: .notice--info}
 
 ### The output
@@ -41,11 +41,15 @@ To do so, we'll store the size of each layer inside a `Vec<usize>`. If the inter
 I won't go into details of propagation, since it is perfectly explained [by 3Blue1Brown](https://www.3blue1brown.com/lessons/neural-networks), but here's a summary. For the activation to propagate between layers, a neural network uses weights, for each connection between two neurons of two layers, and biases, one per neuron of the second layer. 
 
 Mathematicaly, if we consider the propagation between the layer $i$ and $i+1$, and that we index the activations of the layer $i$ from $1$ to $n$, we have for every activation $a_m^{(i+1)}$ of the layer $i+1$:
+
 $$a_m^{(i+1)} = \sigma(w_{m, 0} a_0^{(i)} + w_{m, 1} a_1^{(i)} + ... + w_{m, n} a_n^{(i)} + b_m)$$
+
 Where $\sigma$ is the activation function, and $w_{m, k}$ is weight connecting the $k$-th neuron of layer $i$ to the $m$-th neuron of the layer $i+1$, and $b_m$ the bias of the neuron $m$.
 
 But this is **a lot** of notations, and indices... Hopefully, this can be written more in a more concise way, using matrices:
+
 $$a^{(i+1)} = \sigma(W^{(i)} \times a^{(i)} + B^{(i)})$$
+
 Where $W^{(i)}$ is the **weights matrix**, and $B^{(i)}$ is the **biases vector**.
 
 If you're a bit lost here, do not worry. You only need to understand that we can represents weights as matrices, and biases as vectors.
@@ -318,7 +322,9 @@ This process is called feed-forward, because the neural network will actually co
 - Apply each the activation function to each coefficient
 
 Written in a fancy mathematical way, the activations of the layer number $i+1$, that we'll call $a^{(i+1)}$ can be expressed depending on the activations of the activations of the precendent layer, $a^{(i)}$, with the following formula:
+
 $$a^{(i+1)} = \sigma(W^{(i)} \times a^{(i)} + B^{(i)})$$
+
 Where $\sigma$ is the activation function, $W^{(i)}$ is the weights matrix, and $B^{(i)}$ is the biases vector.
 
 #### Function outline
