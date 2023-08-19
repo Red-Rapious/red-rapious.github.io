@@ -5,6 +5,8 @@ tags:
     - mathematics
     - algorithmic
     - rust
+header:
+  teaser: /assets/teaser-images/euler-rust.png
 ---
 
 ```rust
