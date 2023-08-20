@@ -9,12 +9,12 @@ tags:
     - rust
 ---
 
-Welcome back to this series about digits recognition! Today, we will leave the abstract world of neural network and linear algebra, and start loading some actual images of actual digits. We'll also feed the to our network, and see if an untrained network performs well - spoiler alert: it doesn't.
+Welcome back to this series about digits recognition! Today, we will leave the abstract world of neural network and linear algebra, and start loading some actual images of actual digits. We'll also feed the image set to our network, and see if an untrained network performs well - *spoiler alert: it doesn't*.
 
 ## Loading data
 ### The MNIST dataset
 
-### Using an external `crate`
+### Using the `mnist` crate
 
 ### The three sets
 

@@ -527,4 +527,4 @@ We've coded a lot of important parts of our neural network:
 - The `predict` function
 
 ### What we will do next time
-Next time, we'll actually *use* the neural network! We'll start by loading some images, then we'll predict which digit they contain with our random neural network. See you next time!
+In [Part 2](/digits-recognition-part-2/), we'll actually *use* the neural network! We'll start by loading some images, then we'll predict which digit they contain with our random neural network. See you next time!
